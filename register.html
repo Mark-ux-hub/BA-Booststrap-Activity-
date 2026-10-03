@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <!-- Register Form -->
+        <div class="form-box" id="registerBox">
+            <h2>Create Account</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="password" placeholder="Create password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-pass">Confirm Password</label>
+                    <input type="password" id="confirm-pass" name="confirm_password" placeholder="Repeat password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $(function(){
+            $('#registerForm').validate({
+                rules: {
+                    fullname: { required: true, minlength: 3 },
+                    email: { required: true, email: true },
+                    password: { required: true, minlength: 5 },
+                    confirm_password: { required: true, equalTo: "#reg-password" }
+                },
+                messages: {
+                    fullname: { required: "Name is required", minlength: "At least 3 characters" },
+                    email: { required: "Email is required", email: "Enter a valid email" },
+                    password: { required: "Password is required", minlength: "Min 5 characters" },
+                    confirm_password: { required: "Confirm your password", equalTo: "❌ Passwords do not match!" }
+                },
+                submitHandler: function(){
+                    alert('✅ Registration Successful! Now Login.');
+                    window.location.href = 'login.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
