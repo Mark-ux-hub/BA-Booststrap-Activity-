@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    z-index: -1;
+}
+
+.bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://picsum.photos/id/1035/1920/1080') center/cover no-repeat;
+    opacity: 0.3;
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: block;
+}
+
+.register {
+    display: none;
+}
+
+.form-box h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #eee;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 15px;
+}
+
+.input-group input::placeholder {
+    color: #ccc;
+}
+
+.btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #e94560, #ff6b6b);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.switch {
+    margin-top: 20px;
+    text-align: center;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.switch a {
+    color: #ff9eaa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .form-box {
+        padding: 22px;
+    }
+    .form-box h2 {
+        font-size: 1.3rem;
+    }
+}
